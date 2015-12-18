@@ -463,7 +463,7 @@ var rulesByType = {};
 function generateAllThemes($injector) {
   var head = document.head;
   var firstChild = head ? head.firstElementChild : null;
-  var themeCss = $injector.has('$MD_THEME_CSS') ? $injector.get('$MD_THEME_CSS') : '';
+  var themeCss = $injector.has('$MD_THEME_CSS_CUSTOM') ? $injector.get('$MD_THEME_CSS_CUSTOM') : $injector.has('$MD_THEME_CSS') ? $injector.get('$MD_THEME_CSS') : '';
 
   if ( !firstChild ) return;
   if (themeCss.length === 0) return; // no rules, so no point in running this expensive task
